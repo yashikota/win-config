@@ -1,0 +1,213 @@
+{
+    "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+    "CreationDate": "2024-12-11T17:26:15.904-00:00",
+    "Sources": [
+        {
+            "Packages": [
+                {
+                    "PackageIdentifier": "7zip.7zip"
+                },
+                {
+                    "PackageIdentifier": "Docker.DockerDesktop"
+                },
+                {
+                    "PackageIdentifier": "voidtools.Everything"
+                },
+                {
+                    "PackageIdentifier": "Git.Git"
+                },
+                {
+                    "PackageIdentifier": "REALiX.HWiNFO"
+                },
+                {
+                    "PackageIdentifier": "ImageMagick.ImageMagick"
+                },
+                {
+                    "PackageIdentifier": "Mozilla.Firefox"
+                },
+                {
+                    "PackageIdentifier": "FlorianHeidenreich.Mp3tag"
+                },
+                {
+                    "PackageIdentifier": "Unity.UnityHub"
+                },
+                {
+                    "PackageIdentifier": "Wacom.WacomTabletDriver"
+                },
+                {
+                    "PackageIdentifier": "AntibodySoftware.WizTree"
+                },
+                {
+                    "PackageIdentifier": "XnSoft.XnViewMP"
+                },
+                {
+                    "PackageIdentifier": "Nushell.Nushell"
+                },
+                {
+                    "PackageIdentifier": "MediaArea.MediaInfo"
+                },
+                {
+                    "PackageIdentifier": "Google.Chrome"
+                },
+                {
+                    "PackageIdentifier": "Kitware.CMake"
+                },
+                {
+                    "PackageIdentifier": "CubeSoft.CubePDFUtility"
+                },
+                {
+                    "PackageIdentifier": "OpenJS.NodeJS"
+                },
+                {
+                    "PackageIdentifier": "CubeSoft.CubePDF"
+                },
+                {
+                    "PackageIdentifier": "GitHub.cli"
+                },
+                {
+                    "PackageIdentifier": "Starship.Starship"
+                },
+                {
+                    "PackageIdentifier": "Logitech.OptionsPlus"
+                },
+                {
+                    "PackageIdentifier": "Oracle.VirtualBox"
+                },
+                {
+                    "PackageIdentifier": "VideoLAN.VLC"
+                },
+                {
+                    "PackageIdentifier": "BlenderFoundation.Blender"
+                },
+                {
+                    "PackageIdentifier": "Google.JapaneseIME"
+                },
+                {
+                    "PackageIdentifier": "GoLang.Go"
+                },
+                {
+                    "PackageIdentifier": "JohnMacFarlane.Pandoc"
+                },
+                {
+                    "PackageIdentifier": "Nvidia.CUDA"
+                },
+                {
+                    "PackageIdentifier": "Nvidia.Broadcast"
+                },
+                {
+                    "PackageIdentifier": "GnuPG.GnuPG"
+                },
+                {
+                    "PackageIdentifier": "GnuPG.Gpg4win"
+                },
+                {
+                    "PackageIdentifier": "LLVM.LLVM"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.Edge"
+                },
+                {
+                    "PackageIdentifier": "OBSProject.OBSStudio"
+                },
+                {
+                    "PackageIdentifier": "Parsec.Parsec"
+                },
+                {
+                    "PackageIdentifier": "Valve.Steam"
+                },
+                {
+                    "PackageIdentifier": "WiresharkFoundation.Wireshark"
+                },
+                {
+                    "PackageIdentifier": "EpicGames.EpicGamesLauncher"
+                },
+                {
+                    "PackageIdentifier": "Icarus.Verilog"
+                },
+                {
+                    "PackageIdentifier": "Google.ChromeRemoteDesktopHost"
+                },
+                {
+                    "PackageIdentifier": "tailscale.tailscale"
+                },
+                {
+                    "PackageIdentifier": "Foxit.FoxitReader"
+                },
+                {
+                    "PackageIdentifier": "BurntSushi.ripgrep.MSVC"
+                },
+                {
+                    "PackageIdentifier": "Discord.Discord"
+                },
+                {
+                    "PackageIdentifier": "FastCopy.FastCopy"
+                },
+                {
+                    "PackageIdentifier": "Gyan.FFmpeg"
+                },
+                {
+                    "PackageIdentifier": "KiCad.KiCad"
+                },
+                {
+                    "PackageIdentifier": "Rclone.Rclone"
+                },
+                {
+                    "PackageIdentifier": "Rustlang.Rustup"
+                },
+                {
+                    "PackageIdentifier": "JetBrains.Toolbox"
+                },
+                {
+                    "PackageIdentifier": "Typst.Typst"
+                },
+                {
+                    "PackageIdentifier": "eza-community.eza"
+                },
+                {
+                    "PackageIdentifier": "SlackTechnologies.Slack"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.VisualStudioCode"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.PowerToys"
+                },
+                {
+                    "PackageIdentifier": "Canonical.Ubuntu.2404"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.AppInstaller"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.WindowsTerminal"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.PowerShell"
+                },
+                {
+                    "PackageIdentifier": "Microsoft.WSL"
+                }
+            ],
+            "SourceDetails": {
+                "Argument": "https://cdn.winget.microsoft.com/cache",
+                "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+                "Name": "winget",
+                "Type": "Microsoft.PreIndexed.Package"
+            }
+        },
+        {
+            "Packages": [
+                {
+                    "PackageIdentifier": "XP8K4RGX25G3GM"
+                }
+            ],
+            "SourceDetails": {
+                "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+                "Identifier": "StoreEdgeFD",
+                "Name": "msstore",
+                "Type": "Microsoft.Rest"
+            }
+        }
+    ],
+    "WinGetVersion": "1.9.25200"
+}
