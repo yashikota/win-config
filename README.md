@@ -11,5 +11,5 @@ sudo winget import -i winget.json --ignore-versions --accept-package-agreements 
 ### Upgrade
 
 ```sh
-sudo winget upgrade --all --silent
+sudo winget upgrade --all --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
 ```
