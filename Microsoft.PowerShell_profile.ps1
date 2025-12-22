@@ -17,3 +17,19 @@ function l {
 }
 # which
 function which { (Get-Command $args).Definition }
+
+# uutils
+if (Get-Command coreutils -ErrorAction SilentlyContinue) {
+    $excluded_commands = @("ls", "cat", "cd")
+    $coreutilsExe = (Get-Command coreutils.exe).Source
+    $all_commands = (coreutils --list) -replace '\[|\]' -split "`n" |
+        Where-Object { $_ -match '\w+' } |
+        ForEach-Object { $_.Trim() }
+
+    foreach ($command in $all_commands) {
+        if ($excluded_commands -notcontains $command) {
+            $function_definition = "function global:$command { & '$coreutilsExe' $command `$args }"
+            Invoke-Expression $function_definition
+        }
+    }
+}
