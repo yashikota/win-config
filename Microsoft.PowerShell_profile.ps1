@@ -11,16 +11,35 @@ Set-PSReadLineKeyHandler -Key Ctrl+u -Function ShellBackwardKillWord
 Set-PSReadLineKeyHandler -Key Ctrl+d -Function DeleteCharOrExit
 
 # Aliases
-# ls
-function l {
-    eza -la --icons --git --time-style relative
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
+function Invoke-EzaLs {
+    eza -la --icons --color=always --git --time-style relative
 }
-# which
+Set-Alias ls Invoke-EzaLs
+
+function Invoke-EzaTree {
+    eza --tree --icons --color=always --git --time-style relative
+}
+Set-Alias tree Invoke-EzaTree
+
+function grep {
+    rg @args
+}
+
+function less {
+    bat
+}
+
 function which { (Get-Command $args).Definition }
+
+function .. {
+    Set-Location ..
+}
 
 # uutils
 if (Get-Command coreutils -ErrorAction SilentlyContinue) {
-    $excluded_commands = @("ls", "cat", "cd")
+    $excluded_commands = @("ls", "cat", "cd", "less")
     $coreutilsExe = (Get-Command coreutils.exe).Source
     $all_commands = (coreutils --list) -replace '\[|\]' -split "`n" |
         Where-Object { $_ -match '\w+' } |
