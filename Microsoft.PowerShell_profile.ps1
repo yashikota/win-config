@@ -5,6 +5,34 @@ Import-Module PSReadLine
 # Starship
 $ENV:STARSHIP_CONFIG = "$HOME\Documents\Powershell\starship.toml"
 
+# OSC 133 shell integration for Windows Terminal (enables Ctrl+Shift+C to copy previous output)
+if ($env:WT_SESSION) {
+    $script:__PromptExecuting = $null
+    $script:__OriginalPrompt = $function:prompt
+
+    function global:prompt {
+        $exitCode = if ($global:?) { 0 } else { $global:LASTEXITCODE }
+        if ($null -eq $exitCode) { $exitCode = 0 }
+
+        if ($null -ne $script:__PromptExecuting) {
+            [Console]::Write("`e]133;D;${exitCode}`a")
+        }
+
+        [Console]::Write("`e]133;A`a")
+
+        $promptText = & $script:__OriginalPrompt
+
+        $script:__PromptExecuting = $true
+
+        "${promptText}`e]133;B`a"
+    }
+
+    Set-PSReadLineKeyHandler -Key Enter -ScriptBlock {
+        [Console]::Write("`e]133;C`a")
+        [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+    }
+}
+
 # Key bindings
 Set-PSReadLineKeyHandler -Key Ctrl+k -Function ShellKillWord
 Set-PSReadLineKeyHandler -Key Ctrl+u -Function ShellBackwardKillWord
