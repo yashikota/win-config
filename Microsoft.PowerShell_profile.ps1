@@ -80,3 +80,29 @@ if (Get-Command coreutils -ErrorAction SilentlyContinue) {
         }
     }
 }
+
+# ssh port forward
+function fwd {
+    param(
+        [Parameter(Mandatory, Position = 0, ValueFromRemainingArguments)]
+        [string[]] $Arguments
+    )
+
+    if ($Arguments.Count -lt 2) {
+        throw "Usage: fwd <port> [<port> ...] <host>"
+    }
+
+    $hostName = $Arguments[-1]
+    $sshArguments = @("-N")
+
+    foreach ($portText in $Arguments[0..($Arguments.Count - 2)]) {
+        $port = 0
+        if (-not [int]::TryParse($portText, [ref] $port) -or $port -lt 1 -or $port -gt 65535) {
+            throw "Invalid port '$portText'. Port must be an integer from 1 to 65535."
+        }
+
+        $sshArguments += @("-L", "${port}:localhost:${port}")
+    }
+
+    ssh @sshArguments $hostName
+}
